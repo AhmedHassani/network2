@@ -84,7 +84,6 @@ class _LoginDemoState extends State<LoginDemo> {
                   color: _color, borderRadius: BorderRadius.circular(20)),
               child: FlatButton(
                 onPressed: () {
-                  /*
                  var auth  = LoginController();
                  if(auth.login(_usernameController.text, _passwordController.text)){
                    Navigator.pushAndRemoveUntil<void>(
@@ -94,16 +93,7 @@ class _LoginDemoState extends State<LoginDemo> {
                      ),
                          (Route<dynamic> route) => false,
                    );
-
                  }
-                   */
-                  Navigator.pushAndRemoveUntil<void>(
-                    context,
-                    MaterialPageRoute<void>(
-                      builder: (BuildContext context) => HomePage(),
-                    ),
-                        (Route<dynamic> route) => false,
-                  );
                 },
                 child: const Text(
                   'Login',

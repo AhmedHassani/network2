@@ -122,7 +122,7 @@ class _ResultState extends State<Result> {
           Padding(
             padding: EdgeInsets.all(8.0),
             child:
-            Text('Each 2M  has 2 Pc  total is : ${_deviceController.numberPc}',
+            Text('Each 2M  has 1 Pc  total is : ${_deviceController.numberPc}',
               style: Theme
                   .of(context)
                   .textTheme
