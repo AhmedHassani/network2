@@ -7,7 +7,9 @@ class LoginController {
            LoginModel("ebra98@gmail.com", "123456"),
            LoginModel("alueManar7@gmail.com", "123456"),
            LoginModel("test@gmail.com", "123456"),
+           LoginModel("test2@gmail.com", "123456"),
      ];
+
 
    bool login(String username , String password){
            for(LoginModel model in _data){
@@ -17,5 +19,6 @@ class LoginController {
            }
            return false;
     }
+
 }
 

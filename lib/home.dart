@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:hovering/hovering.dart';
+import 'package:network2/used.dart';
+import 'about.dart';
 import 'building/building_form.dart';
 import 'building/floors_form.dart';
 import 'building/room_form.dart';
@@ -13,7 +15,9 @@ class _HomePageState extends State<HomePage> {
   var data=[
     "Building",
     "Floor",
-    "Room"
+    "Room",
+    "About",
+    "How Used"
   ];
   @override
   Widget build(BuildContext context) {
@@ -51,17 +55,27 @@ class _HomePageState extends State<HomePage> {
                               }else if(data[index]=="Floor"){
                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>
                                     FloorFrom()));
+                              }else if(data[index]=="About"){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>
+                                    About()));
+                              }else if(data[index]=="How Used"){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>
+                                    Used()));
                               }
                           },
-                          child:Card(
-                            color:_color,
-                            child:Column(
+                          child:HoverContainer(
+                            hoverColor: Colors.amber,
+                            hoverTransform:Matrix4.rotationX(10),
+                            height: 50,
+                            child:Card(
+                              color:_color,
+                              child:Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Image.asset(
-                                      "images/${index}.png",
-                                       width: 60,
-                                       height: 60,
+                                    "images/${index}.png",
+                                    width: 60,
+                                    height: 60,
                                   ),
                                   SizedBox(height:10,),
                                   Text(
@@ -73,6 +87,8 @@ class _HomePageState extends State<HomePage> {
                                     ),),
                                 ],
                               ),
+                            ),
+
                           ),
                         );
                       },
@@ -93,3 +109,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+/*
+
+ */

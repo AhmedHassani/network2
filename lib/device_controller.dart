@@ -44,6 +44,5 @@ class DeviceController {
            return _devices;
     }
 
-    //MikroTik Routers and Wireless ...
 
 }

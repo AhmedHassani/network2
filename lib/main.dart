@@ -93,6 +93,10 @@ class _LoginDemoState extends State<LoginDemo> {
                      ),
                          (Route<dynamic> route) => false,
                    );
+                 }else{
+                   ScaffoldMessenger.of(context).showSnackBar( const SnackBar(
+                     content: Text("Password or Username incorrect"),
+                   ));
                  }
                 },
                 child: const Text(
@@ -104,7 +108,6 @@ class _LoginDemoState extends State<LoginDemo> {
             const SizedBox(
               height: 130,
             ),
-            const Text('New User? Create Account')
           ],
         ),
       ),
