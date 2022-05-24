@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../colors.dart';
 import '../result.dart';
 
 
@@ -9,7 +10,7 @@ class RoomFrom extends StatefulWidget {
   @override
   _RoomFromState createState() => _RoomFromState();
 }
-var _color = Color.fromRGBO(108, 99, 255, 1);
+
 class _RoomFromState extends State<RoomFrom> {
   final List<String> roomSize = ["5", "8", "15","20"];
   String selectedRoomsSize = "5";
@@ -21,7 +22,7 @@ class _RoomFromState extends State<RoomFrom> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Network Dimensions"),
-        backgroundColor:_color,
+        backgroundColor:color,
         elevation:0,
       ),
       body: Container(
@@ -71,7 +72,7 @@ class _RoomFromState extends State<RoomFrom> {
                 )));
               },
               child:Container(
-                color: _color,
+                color: color,
                 padding: const EdgeInsets.all(12.0),
                 width:width*0.5,
                 child: const Center(

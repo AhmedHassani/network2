@@ -1,6 +1,6 @@
 import 'package:contactus/contactus.dart';
 import 'package:flutter/material.dart';
-
+import 'colors.dart';
 class About extends StatefulWidget {
   const About({Key? key}) : super(key: key);
 
@@ -9,13 +9,13 @@ class About extends StatefulWidget {
 }
 
 class _AboutState extends State<About> {
-  var _color = Color.fromRGBO(108, 99, 255, 1);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("About Project"),
-        backgroundColor:_color,
+        backgroundColor:color,
         elevation:0,
       ),
       body:Scaffold(

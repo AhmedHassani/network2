@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'colors.dart';
 import 'device_controller.dart';
 
 class Result extends StatefulWidget {
@@ -20,7 +21,6 @@ class Result extends StatefulWidget {
   _ResultState createState() => _ResultState();
 }
 
-var _color = Color.fromRGBO(108, 99, 255, 1);
 
 class _ResultState extends State<Result> {
   late DeviceController _deviceController;
@@ -45,7 +45,7 @@ class _ResultState extends State<Result> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Final Result"),
-        backgroundColor: _color,
+        backgroundColor: color,
         elevation: 0,
       ),
       body: Column(

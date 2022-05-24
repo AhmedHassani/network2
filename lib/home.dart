@@ -5,12 +5,13 @@ import 'about.dart';
 import 'building/building_form.dart';
 import 'building/floors_form.dart';
 import 'building/room_form.dart';
+import 'colors.dart';
 
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-var _color = Color.fromRGBO(108, 99, 255, 1);
+
 class _HomePageState extends State<HomePage> {
   var data=[
     "Building",
@@ -25,10 +26,9 @@ class _HomePageState extends State<HomePage> {
     double height = size.height;
     double width = size.width;
     return Scaffold(
-        backgroundColor: Colors.grey.shade50,
         appBar: AppBar(
           title: const Text("Choose one from the list below : building or floor or room"),
-          backgroundColor:_color,
+          backgroundColor:color,
           elevation:0,
         ),
         body:Center(
@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                             hoverTransform:Matrix4.rotationX(10),
                             height: 50,
                             child:Card(
-                              color:_color,
+                              color:color,
                               child:Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [

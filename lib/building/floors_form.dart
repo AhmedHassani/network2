@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../colors.dart';
 import '../result.dart';
 
 
@@ -9,7 +10,7 @@ class FloorFrom extends StatefulWidget {
   @override
   _FloorFromState createState() => _FloorFromState();
 }
-var _color = Color.fromRGBO(108, 99, 255, 1);
+
 class _FloorFromState extends State<FloorFrom> {
   final List<String> room = ["1", "2", "3","4", "5", "6","7", "8", "9","10"];
   final List<String> roomSize = ["5", "8", "15","20"];
@@ -23,7 +24,7 @@ class _FloorFromState extends State<FloorFrom> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Network Dimensions"),
-        backgroundColor:_color,
+        backgroundColor:color,
         elevation:0,
       ),
       body: Container(
@@ -42,7 +43,7 @@ class _FloorFromState extends State<FloorFrom> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Numner Rooms"),
+                  Text("Number OF Rooms"),
                   DropdownButton<String>(
                     value: selectedRooms,
                     isExpanded: true,
@@ -101,7 +102,7 @@ class _FloorFromState extends State<FloorFrom> {
                 )));
               },
               child:Container(
-                color: _color,
+                color: color,
                 padding: const EdgeInsets.all(12.0),
                 width:width*0.5,
                 child: const Center(

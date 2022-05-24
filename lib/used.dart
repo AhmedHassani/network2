@@ -1,7 +1,8 @@
 import 'package:bulleted_list/bulleted_list.dart';
 import 'package:flutter/material.dart';
 
-var _color = Color.fromRGBO(108, 99, 255, 1);
+import 'colors.dart';
+
 
 class Used extends StatelessWidget {
   const Used({Key? key}) : super(key: key);
@@ -14,11 +15,10 @@ class Used extends StatelessWidget {
       "On the page, choose the number of rooms and the area of ​​​​the building according to the building you need",
       "last page only show final results"
     ];
-
     return Scaffold(
       appBar: AppBar(
         title: const Text("How Used"),
-        backgroundColor: _color,
+        backgroundColor: color,
         elevation: 0,
       ),
       body: SingleChildScrollView(

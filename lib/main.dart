@@ -1,9 +1,17 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:network2/rqs.dart';
+import 'package:network2/user.dart';
 
+import 'colors.dart';
 import 'home.dart';
-import 'login_controller.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(UserAdapter());
   runApp(MyApp());
 }
 
@@ -22,7 +30,6 @@ class LoginDemo extends StatefulWidget {
   _LoginDemoState createState() => _LoginDemoState();
 }
 
-var _color = Color.fromRGBO(108, 99, 255, 1);
 
 class _LoginDemoState extends State<LoginDemo> {
   TextEditingController _passwordController =  TextEditingController();
@@ -32,9 +39,15 @@ class _LoginDemoState extends State<LoginDemo> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: _color,
+        backgroundColor: color,
         title: Text("Login Page"),
         elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.login),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>Auth()));
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -81,23 +94,25 @@ class _LoginDemoState extends State<LoginDemo> {
               height: 50,
               width: 250,
               decoration: BoxDecoration(
-                  color: _color, borderRadius: BorderRadius.circular(20)),
+                  color: color, borderRadius: BorderRadius.circular(20)),
               child: FlatButton(
-                onPressed: () {
-                 var auth  = LoginController();
-                 if(auth.login(_usernameController.text, _passwordController.text)){
-                   Navigator.pushAndRemoveUntil<void>(
-                     context,
-                     MaterialPageRoute<void>(
-                       builder: (BuildContext context) => HomePage(),
-                     ),
-                         (Route<dynamic> route) => false,
-                   );
-                 }else{
-                   ScaffoldMessenger.of(context).showSnackBar( const SnackBar(
-                     content: Text("Password or Username incorrect"),
-                   ));
-                 }
+                onPressed: () async {
+                  final box = await Hive.openBox<User>('users');
+                  var data =  box.values.toList();
+                  for(var us in data){
+                    print(us.username);
+                    if(us.username==_usernameController.text && us.password==_passwordController.text){
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (BuildContext context) => HomePage()),
+                          ModalRoute.withName('/')
+                      );
+                    }else{
+                      ScaffoldMessenger.of(context).showSnackBar( const SnackBar(
+                        content: Text("Password or Username incorrect"),
+                      ));
+                    }
+                  }
                 },
                 child: const Text(
                   'Login',
