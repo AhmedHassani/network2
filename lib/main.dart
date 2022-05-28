@@ -41,13 +41,8 @@ class _LoginDemoState extends State<LoginDemo> {
       appBar: AppBar(
         backgroundColor: color,
         title: Text("Login Page"),
+        centerTitle: true,
         elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.login),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>Auth()));
-          },
-        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -121,7 +116,22 @@ class _LoginDemoState extends State<LoginDemo> {
               ),
             ),
             const SizedBox(
-              height: 130,
+              height: 10,
+            ),
+            Container(
+              height: 50,
+              width: 250,
+              decoration: BoxDecoration(
+                  color: color, borderRadius: BorderRadius.circular(20)),
+              child: FlatButton(
+                onPressed: () async {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Auth()));
+                },
+                child: const Text(
+                  'Registration',
+                  style: TextStyle(color: Colors.white, fontSize: 25),
+                ),
+              ),
             ),
           ],
         ),

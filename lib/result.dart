@@ -46,6 +46,7 @@ class _ResultState extends State<Result> {
       appBar: AppBar(
         title: const Text("Final Result"),
         backgroundColor: color,
+        centerTitle: true,
         elevation: 0,
       ),
       body: Column(

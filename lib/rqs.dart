@@ -20,6 +20,7 @@ class _AuthState extends State<Auth> {
       appBar: AppBar(
         backgroundColor: color,
         title:const  Text("Register"),
+        centerTitle: true,
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -93,7 +94,22 @@ class _AuthState extends State<Auth> {
                 ),
               ),
               const SizedBox(
-                height: 130,
+                height: 10,
+              ),
+              Container(
+                height: 50,
+                width: 250,
+                decoration: BoxDecoration(
+                    color: color, borderRadius: BorderRadius.circular(20)),
+                child: FlatButton(
+                  onPressed: () async {
+                    Navigator.pop(context);
+                  },
+                  child: const Text(
+                    'Back',
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  ),
+                ),
               ),
             ],
           ),

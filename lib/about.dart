@@ -15,6 +15,7 @@ class _AboutState extends State<About> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("About Project"),
+        centerTitle: true,
         backgroundColor:color,
         elevation:0,
       ),

@@ -19,6 +19,7 @@ class Used extends StatelessWidget {
       appBar: AppBar(
         title: const Text("How Used"),
         backgroundColor: color,
+        centerTitle: true,
         elevation: 0,
       ),
       body: SingleChildScrollView(

@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: const Text("Choose one from the list below : building or floor or room"),
           backgroundColor:color,
+          centerTitle: true,
           elevation:0,
         ),
         body:Center(
@@ -85,6 +86,21 @@ class _HomePageState extends State<HomePage> {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15,
                                     ),),
+                                  Container(
+                                    height: 50,
+                                    width: 250,
+                                    decoration: BoxDecoration(
+                                        color: color, borderRadius: BorderRadius.circular(20)),
+                                    child: FlatButton(
+                                      onPressed: () async {
+                                        Navigator.pop(context);
+                                      },
+                                      child: const Text(
+                                        'Back',
+                                        style: TextStyle(color: Colors.white, fontSize: 25),
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
