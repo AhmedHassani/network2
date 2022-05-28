@@ -86,6 +86,26 @@ class _RoomFromState extends State<RoomFrom> {
                 ),
               ),
             ),
+            SizedBox(height: 5,),
+            GestureDetector(
+              onTap:(){
+                Navigator.pop(context);
+              },
+              child:Container(
+                color: color,
+                padding: const EdgeInsets.all(12.0),
+                width:width*0.5,
+                child: const Center(
+                  child: Text(
+                    "Back",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

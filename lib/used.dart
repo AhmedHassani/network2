@@ -32,11 +32,12 @@ class Used extends StatelessWidget {
               const SizedBox(height: 30,),
               const Text(""
                   "To use the application normally and without problems, follow the following steps",
-                style:TextStyle(color: Colors.black54,fontSize: 16),
+                style:TextStyle(color: Colors.black54,fontSize: 20),
               ),
               const SizedBox(height: 10,),
               BulletedList(
                 listItems: role,
+                style: TextStyle(fontSize: 16),
                 listOrder: ListOrder.ordered,
               ),
             ],

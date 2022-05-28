@@ -86,21 +86,6 @@ class _HomePageState extends State<HomePage> {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15,
                                     ),),
-                                  Container(
-                                    height: 50,
-                                    width: 250,
-                                    decoration: BoxDecoration(
-                                        color: color, borderRadius: BorderRadius.circular(20)),
-                                    child: FlatButton(
-                                      onPressed: () async {
-                                        Navigator.pop(context);
-                                      },
-                                      child: const Text(
-                                        'Back',
-                                        style: TextStyle(color: Colors.white, fontSize: 25),
-                                      ),
-                                    ),
-                                  ),
                                 ],
                               ),
                             ),
